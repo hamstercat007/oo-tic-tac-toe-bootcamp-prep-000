@@ -45,7 +45,7 @@ class TicTacToe
     
     if valid_move?(index)
       move(index)
-      display_board(@board)
+      display_board
     else
       puts "Move not valid"
       turn(@board)
