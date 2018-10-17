@@ -38,17 +38,18 @@ class TicTacToe
     (0..8).cover?(index) && !position_taken?(index)
   end
   
-def turn
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(@board, index)
-    move(@board, index)
-    display_board(@board)
-  else
-    puts "Move not valid"
-    turn(@board)
-  end 
-
+  def turn
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    
+    if valid_move?(@board, index)
+      move(@board, index)
+      display_board(@board)
+    else
+      puts "Move not valid"
+      turn(@board)
+    end
+  end
 end
 
